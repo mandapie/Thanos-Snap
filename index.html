@@ -27,7 +27,9 @@
 
         $("#otherImage").click(function() {
             var url = prompt("Enter Image Url");
-            $("img").attr("src",url);
+            if (url != null){
+                $("img").attr("src",url);
+            }
         });
 
         var imageDataArray = [];
