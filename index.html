@@ -20,9 +20,15 @@
         <!-- source: https://www.kisspng.com/png-billie-eilish-musician-billie-eilish-4915348/ -->
         <img src="billie-eilish.png" height="400px">
         <button id="start-btn">Snap!</button>
+        <button id="otherImage">use your own image</button>
     </div>
 
     <script>
+
+        $("#otherImage").click(function() {
+            var url = prompt("Enter Image Url");
+            $("img").attr("src",url);
+        });
 
         var imageDataArray = [];
         var canvasCount = 35;
