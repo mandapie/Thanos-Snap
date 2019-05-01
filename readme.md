@@ -2,7 +2,7 @@ Origin:
 - By RedStapler
 
 What I modified:
-- added button that prompts users to select different images
+- added button that prompts users to select different images (WORKS BEST WITH .PNG TYPES!)
 - resizing image height
 - keep buttons after snap
 
