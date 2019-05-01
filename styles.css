@@ -39,8 +39,8 @@ body {
     /* need fix height for faster performace and prevent image resize
        and margin-bottom because of flex in body element
     */
-    height: 400px;
-    margin-bottom: 196px;
+    height: 400px!important;
+    margin-bottom: 196px!important;
 }
 
 #otherImage {
