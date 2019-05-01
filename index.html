@@ -25,7 +25,9 @@
     </div>
 
     <script>
-
+        var imageDataArray = [];
+        var canvasCount = 35;
+        
         $("#otherImage").click(function () {
             var url = prompt("Enter Image Url");
             if (url != null && url !== "") {
@@ -34,11 +36,10 @@
                 $("#start-btn").prop("disabled", false);
             }
         });
-        
-        function Snap() {
-            var imageDataArray = [];
-            var canvasCount = 35;
 
+        function Snap() {
+            imageDataArray = [];
+            
             $("#start-btn").prop("disabled", true); // disable button after click to allow animation to finish
 
             html2canvas($(".content")[0]).then(canvas => {
@@ -76,7 +77,6 @@
                 });
             });
         }
-
         function weightedRandomDistrib(peak) {
             var prob = [], seq = [];
             for (let i = 0; i < canvasCount; i++) {
@@ -132,7 +132,6 @@
             tempCtx.putImageData(new ImageData(imageDataArray, w, h), 0, 0);
 
             return canvas;
-        }
         }
     </script>
 </body>
