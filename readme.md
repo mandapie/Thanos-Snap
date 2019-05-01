@@ -4,6 +4,7 @@ Origin:
 What I modified:
 - added button that prompts users to select different images
 - resizing image height
+- keep buttons after snap
 
 All other credits go to RedStapler:
 - Explanation: https://www.youtube.com/watch?v=fM791m4A_Pk
