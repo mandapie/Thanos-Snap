@@ -29,6 +29,7 @@
         var canvasCount = 35;
 
         if (navigator.userAgent.indexOf('Firefox') > -1) {
+            // source: https://stackoverflow.com/questions/324486/how-do-you-read-css-rule-values-with-javascript
             var classes = document.styleSheets[0].rules || document.styleSheets[0].cssRules;
             for (var x = 0; x < classes.length; x++) {
                 if (classes[x].selectorText == ".dust") {
@@ -75,7 +76,7 @@
                     $("body").append(c);
                 }
                 //clear all children except the canvas
-                $(".content").children().not(".dust").fadeOut(1000);
+                $(".content").children().not(".dust").fadeOut(2500);
                 //apply animation
                 $(".dust").each(function (index) {
                     animateBlur($(this), 0.8, 800);
