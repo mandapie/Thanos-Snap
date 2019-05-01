@@ -40,7 +40,7 @@ body {
        and margin-bottom because of flex in body element
     */
     height: 400px;
-    bottom: 273px;
+    bottom: 258px;
 }
 
 #otherImage {
