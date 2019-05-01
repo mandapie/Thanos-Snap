@@ -1,38 +1,52 @@
 * {
     box-sizing: border-box;
-  }
-  body {
+}
+
+body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ddd;
-  }
-  .content {
+}
+
+.content {
+    height: 400px;
+}
+
+/* move properties from content to outer-div to keep buttons after snap */
+.outer-div {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: #ddd;
-  }
-  #start-btn {
+}
+
+#start-btn {
     font-size: 20px;
-    padding: 20px 40px 20px 80px ;
+    padding: 20px 40px 20px 80px;
     margin-top: 30px;
     border-radius: 10px;
-    background:url("https://cdn.dribbble.com/users/2050420/screenshots/4595136/gautlet_dribo.png") white 15px no-repeat;
-    background-size: 50px;
-  }
-  .dust {
-    position: absolute;
-    height: 600px; /* need fix height for faster performace and prevent image enlargment*/
-  }
+    background: url("gauntlet-snap.png") 30px no-repeat;
+    background-size: 30px;
+}
 
-  #otherImage {
+#start-btn:hover{
+    cursor: pointer;
+}
+
+.dust {
+    position: absolute;
+    /* need fix height for faster performace and prevent image resize
+       and margin-bottom because of flex in body element
+    */
+    height: 400px;
+    margin-bottom: 196px;
+}
+
+#otherImage {
     font-size: 20px;
     padding: 20px 40px;
     margin-top: 30px;
     border-radius: 10px;
-    background:white;
-    background-size: 50px;
-  }
+    background: none;
+}

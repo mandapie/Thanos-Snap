@@ -15,26 +15,31 @@
 </head>
 
 <body>
-
-    <div class="content">
-        <!-- source: https://www.kisspng.com/png-billie-eilish-musician-billie-eilish-4915348/ -->
-        <img src="billie-eilish.png" height="400px">
+    <div class="outer-div">
+        <div class="content">
+            <!-- source: https://www.kisspng.com/png-billie-eilish-musician-billie-eilish-4915348/ -->
+            <img src="billie-eilish.png" height="400px">
+        </div>
         <button id="start-btn">Snap!</button>
         <button id="otherImage">use your own image</button>
     </div>
 
     <script>
 
-        $("#otherImage").click(function() {
+        $("#otherImage").click(function () {
             var url = prompt("Enter Image Url");
-            if (url != null){
-                $("img").attr("src",url);
+            if (url != null && url !== "") {
+                $("img").attr("src", url);
+                $("img").removeAttr("style");
+                $("#start-btn").prop("disabled", false);
             }
         });
 
         var imageDataArray = [];
         var canvasCount = 35;
         $("#start-btn").click(function () {
+
+            $("#start-btn").prop("disabled", true); // disable button after click to allow animation to finish
 
             html2canvas($(".content")[0]).then(canvas => {
                 //capture all div data as image
@@ -59,7 +64,7 @@
                     $("body").append(c);
                 }
                 //clear all children except the canvas
-                $(".content").children().not(".dust").fadeOut(3500);
+                $(".content").children().not(".dust").fadeOut(1000);
                 //apply animation
                 $(".dust").each(function (index) {
                     animateBlur($(this), 0.8, 800);
