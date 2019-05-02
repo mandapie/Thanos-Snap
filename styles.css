@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .content {
@@ -40,7 +40,6 @@ body {
        and margin-bottom because of flex in body element
     */
     height: 400px;
-    bottom: 258px;
 }
 
 #otherImage {
