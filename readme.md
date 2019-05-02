@@ -2,9 +2,10 @@ Origin:
 - By RedStapler
 
 What I modified:
-- added button that prompts users to select different images (WORKS BEST WITH .PNG TYPES!)
-- resizing image height
+- added button that prompts users to select a different image (URL only)
+- resizing image height and fixed canvases position
 - keep buttons after snap
+- convert images to base64 so that animation works properly
 
 All other credits go to RedStapler:
 - Explanation: https://www.youtube.com/watch?v=fM791m4A_Pk
