@@ -37,15 +37,14 @@
 
                 setTimeout(function () {
                     console.log("convert");
-                    var test = document.getElementById("image");
-                    var base64 = getBase64Image(test);
+                    var img = document.getElementById("image");
+                    var base64 = getBase64Image(img);
                     $("img").attr("src", base64);
-
-                    test.crossOrigin = "anonymous";
                 }, 1000);
             }
         });
 
+        // source: https://www.w3schools.com/tags/canvas_drawimage.asp
         function getBase64Image(img) {
             var c = document.createElement("canvas");
             var ctx = c.getContext("2d");
