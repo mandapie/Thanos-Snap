@@ -18,7 +18,7 @@
     <div class="outer-div">
         <div class="content">
             <!-- source: https://www.kisspng.com/png-billie-eilish-musician-billie-eilish-4915348/ -->
-            <img src="billie-eilish.png" height="400px">
+            <img id="image" src="billie-eilish.png" height="400px">
         </div>
         <button id="start-btn" onclick="Snap();">Snap!</button>
         <button id="otherImage">use your own image</button>
@@ -28,25 +28,31 @@
         var imageDataArray = [];
         var canvasCount = 35;
 
-        // if (navigator.userAgent.indexOf('Firefox') > -1) {
-        //     // source: https://stackoverflow.com/questions/324486/how-do-you-read-css-rule-values-with-javascript
-        //     var classes = document.styleSheets[0].rules || document.styleSheets[0].cssRules;
-        //     for (var x = 0; x < classes.length; x++) {
-        //         if (classes[x].selectorText == ".dust") {
-        //             classes[x].style.cssText = classes[x].style.cssText.replace("bottom: 258px;", "bottom: 273px;");
-        //             //(classes[x].cssText) ? alert(classes[x].cssText) : alert(classes[x].style.cssText);
-        //         }
-        //     }
-        // }
-
         $("#otherImage").click(function () {
             var url = prompt("Enter Image Url");
             if (url != null && url !== "") {
-                $("img").attr("src", url);
+                document.getElementById("image").src = url;
                 $("img").removeAttr("style");
                 $("#start-btn").prop("disabled", false);
+
+                setTimeout(function () {
+                    console.log("convert");
+                    var test = document.getElementById("image");
+                    var base64 = getBase64Image(test);
+                    $("img").attr("src", base64);
+                }, 1000);
             }
         });
+
+        function getBase64Image(img) {
+            var c = document.createElement("canvas");
+            var ctx = c.getContext("2d");
+            c.width = img.width;
+            c.height = 400;
+            ctx.drawImage(img, 0, 0, c.width, c.height);
+            var dataURL = c.toDataURL("image/png");
+            return dataURL;
+        }
 
         function Snap() {
             imageDataArray = [];
