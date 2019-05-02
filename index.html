@@ -18,7 +18,7 @@
     <div class="outer-div">
         <div class="content">
             <!-- source: https://www.kisspng.com/png-billie-eilish-musician-billie-eilish-4915348/ -->
-            <img id="image" src="billie-eilish.png" height="400px">
+            <img id="image" crossorigin="anonymous" src="billie-eilish.png" height="400px">
         </div>
         <button id="start-btn" onclick="Snap();">Snap!</button>
         <button id="otherImage">use your own image</button>
@@ -40,6 +40,8 @@
                     var test = document.getElementById("image");
                     var base64 = getBase64Image(test);
                     $("img").attr("src", base64);
+
+                    test.crossOrigin = "anonymous";
                 }, 1000);
             }
         });
